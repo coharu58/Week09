@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ユーザー登録フォーム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .error-message {
+        min-height: 1.25rem;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-100 px-4 py-12 text-slate-800">
+    <main class="mx-auto max-w-xl rounded-2xl bg-white p-8 shadow-lg shadow-slate-200">
+      <h1 class="mb-6 text-2xl font-bold text-slate-900">ユーザー登録</h1>
+
+      <form id="signup-form" novalidate class="space-y-6">
+        <div id="form-message" class="hidden rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm font-medium" aria-live="polite"></div>
+
+        <div>
+          <label for="name" class="mb-2 block text-sm font-medium text-slate-700">名前</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2.5 text-base transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="山田太郎"
+          />
+          <p class="error-message mt-1 hidden text-sm text-red-600" data-error-for="name"></p>
+        </div>
+
+        <div>
+          <label for="email" class="mb-2 block text-sm font-medium text-slate-700">メールアドレス</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2.5 text-base transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="example@example.com"
+          />
+          <p class="error-message mt-1 hidden text-sm text-red-600" data-error-for="email"></p>
+        </div>
+
+        <div>
+          <label for="password" class="mb-2 block text-sm font-medium text-slate-700">パスワード</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            class="w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2.5 text-base transition focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            placeholder="8文字以上"
+          />
+          <p class="error-message mt-1 hidden text-sm text-red-600" data-error-for="password"></p>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+          <input
+            id="agree"
+            name="agree"
+            type="checkbox"
+            required
+            class="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+          />
+          <label for="agree" class="text-sm text-slate-700">
+            利用規約に同意します
+          </label>
+        </div>
+        <p class="error-message mt-1 hidden text-sm text-red-600" data-error-for="agree"></p>
+
+        <button
+          type="submit"
+          class="w-full rounded-lg bg-blue-600 px-4 py-3 text-base font-semibold text-white transition hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-200"
+        >
+          登録する
+        </button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
